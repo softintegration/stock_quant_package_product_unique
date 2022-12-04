@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?><odoo>
+  <data>
+    <record id="view_quant_package_form_inherited" model="ir.ui.view">
+      <field name="name">view.quant.package.form.inherited</field>
+      <field name="model">stock.quant.package</field>
+      <field name="inherit_id" ref="stock.view_quant_package_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//separator" position="before">
+          <group name="product_details" string="Product details">
+              <group>
+                  <field name="product_id"/>
+              </group>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_quant_package_tree_inherited" model="ir.ui.view">
+      <field name="name">view.quant.package.tree.inherited</field>
+      <field name="model">stock.quant.package</field>
+      <field name="inherit_id" ref="stock.view_quant_package_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='display_name']" position="after">
+          <field name="product_id"/>
+        </xpath>
+      </field>
+    </record>
+
+
+  </data>
+</odoo>
