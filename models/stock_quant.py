@@ -9,7 +9,12 @@ class QuantPackage(models.Model):
     _inherit = "stock.quant.package"
 
     product_id = fields.Many2one('product.product',string='Product',compute='_compute_product',store=True,readonly=True)
+    global_quantity = fields.Float(string='Global quantity',compute='_compute_global_quantity')
 
+    @api.depends('quant_ids')
+    def _compute_global_quantity(self):
+        for each in self:
+            each.global_quantity = sum(each.quant_ids.mapped('quantity'))
 
     @api.depends('quant_ids')
     def _compute_product(self):
