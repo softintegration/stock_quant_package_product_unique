@@ -27,6 +27,19 @@
       </field>
     </record>
 
+    <record id="quant_package_search_view_inherited" model="ir.ui.view">
+      <field name="name">quant.package.search.view.inherited</field>
+      <field name="model">stock.quant.package</field>
+      <field name="inherit_id" ref="stock.quant_package_search_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="after">
+          <field name="product_id"/>
+        </xpath>
+        <xpath expr="//filter[@name='location']" position="before">
+          <filter string="Product" name="product" domain="[]" context="{'group_by' : 'product_id'}"/>
+        </xpath>
+      </field>
+    </record>
 
   </data>
 </odoo>

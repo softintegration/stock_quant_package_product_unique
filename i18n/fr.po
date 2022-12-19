@@ -36,6 +36,7 @@ msgstr "Colis"
 
 #. module: stock_quant_package_product_unique
 #: model:ir.model.fields,field_description:stock_quant_package_product_unique.field_stock_quant_package__product_id
+#: model_terms:ir.ui.view,arch_db:stock_quant_package_product_unique.quant_package_search_view_inherited
 msgid "Product"
 msgstr "Article"
 
