@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template inherit_id="stock.report_package_barcode" id="report_package_barcode_inherited">
+        <xpath expr="//table[2]" position="replace">
+            <table class="table table-sm" style="border-bottom: 0px solid white !important;">
+                <t t-set="has_serial_number" t-value="o.quant_ids.mapped('lot_id')" />
+                <tbody>
+                    <tr name="tr_one_product">
+                        <th name="th_one_product"><strong>Product</strong></th>
+                        <td><span t-field="o.quant_ids[0].product_id.name"/></td>
+                    </tr>
+                    <tr name="tr_one_quantity">
+                        <th name="th_one_quantity"><strong>Quantity</strong></th>
+                        <td><span t-field="o.quant_ids[0].quantity"/> <span t-field="o.quant_ids[0].product_id.uom_id.name"/></td>
+                    </tr>
+                    <tr name="tr_one_serial" t-if="has_serial_number">
+                        <th name="th_one_serial"><strong>Lot/Serial Number</strong></th>
+                        <td><span t-field="o.quant_ids[0].lot_id.name"/></td>
+                    </tr>
+                </tbody>
+            </table>
+        </xpath>
+    </template>
+</odoo>

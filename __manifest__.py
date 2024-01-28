@@ -10,12 +10,13 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.3',
+    'version': '1.0.1.4',
     'category': 'Stock',
     'demo': [],
     'depends': ['stock'],
     'data': [
         'views/stock_quant_views.xml',
+        'report/report_package_barcode.xml'
     ],
     'license': 'LGPL-3',
 }
